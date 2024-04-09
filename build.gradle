@@ -46,7 +46,7 @@ project(':core-api') { // 컴파일 시 multi-module-database 로딩
         implementation 'org.springframework.boot:spring-boot-starter-web'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         implementation project(':core-domain')
-        implementation project(':storage:jpa-storage')
+        runtimeOnly project(':storage:jpa-storage')
     }
 }
 
@@ -62,7 +62,7 @@ project(':storage:jpa-storage') {
     bootJar { enabled = false }
     jar { enabled = true }
     dependencies {
-        implementation project(':core-domain')
+        compileOnly project(':core-domain')
         implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
         implementation 'com.h2database:h2'
     }

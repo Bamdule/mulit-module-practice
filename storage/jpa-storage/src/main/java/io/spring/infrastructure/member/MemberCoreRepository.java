@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class MemberRepositoryImpl implements MemberRepository {
+public class MemberCoreRepository implements MemberRepository {
 
     private final JpaMemberRepository memberRepository;
 
-    public MemberRepositoryImpl(JpaMemberRepository memberRepository) {
+    public MemberCoreRepository(JpaMemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
