@@ -1,9 +1,9 @@
 package io.spring.presentation.member;
 
-import io.spring.application.member.MemberFindAllService;
-import io.spring.application.member.MemberFindOneService;
-import io.spring.application.member.MemberRegisterCommand;
-import io.spring.application.member.MemberRegisterService;
+import io.spring.domain.member.MemberFindAllService;
+import io.spring.domain.member.MemberFindOneService;
+import io.spring.domain.member.MemberRegisterCommand;
+import io.spring.domain.member.MemberRegisterService;
 import io.spring.domain.member.Member;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -50,16 +50,15 @@ project(':core-api') { // 컴파일 시 multi-module-database 로딩
     }
 }
 
-project(':core-domain') { // 컴파일 시 multi-module-database 로딩
+project(':core-domain') {
     bootJar { enabled = false }
     jar { enabled = true }
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-        testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 }
 
-project(':storage:jpa-storage') { // 컴파일 시 multi-module-database 로딩
+project(':storage:jpa-storage') {
     bootJar { enabled = false }
     jar { enabled = true }
     dependencies {

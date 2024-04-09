@@ -1,4 +1,4 @@
-package io.spring.application.member;
+package io.spring.domain.member;
 
 import io.spring.domain.member.Member;
 
