@@ -1,21 +1,20 @@
-package io.spring.domain.member;
+package io.spring.usecase;
 
 import io.spring.domain.member.Member;
 import io.spring.domain.member.MemberRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
-public class MemberFindAllService {
+public class MemberFindOneService {
 
     private final MemberRepository memberRepository;
 
-    public MemberFindAllService(MemberRepository memberRepository) {
+    public MemberFindOneService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
-    public List<Member> findAll() {
-        return memberRepository.findAll();
+    public Member findById(Long id) {
+        return memberRepository.findById(id)
+            .orElseThrow(RuntimeException::new);
     }
 }

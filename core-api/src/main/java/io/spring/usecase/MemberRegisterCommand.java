@@ -1,4 +1,4 @@
-package io.spring.domain.member;
+package io.spring.usecase;
 
 import io.spring.domain.member.Member;
 

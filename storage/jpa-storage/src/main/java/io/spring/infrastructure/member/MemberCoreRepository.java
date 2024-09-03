@@ -32,4 +32,9 @@ public class MemberCoreRepository implements MemberRepository {
     public List<Member> findAll() {
         return memberRepository.findAll().stream().map(MemberEntity::to).toList();
     }
+
+    @Override
+    public Member put(Member member) {
+        return memberRepository.save(MemberEntity.of(member)).to();
+    }
 }

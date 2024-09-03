@@ -17,13 +17,17 @@ public class MemberEntity {
     protected MemberEntity() {
     }
 
-    public MemberEntity(String name) {
+    public MemberEntity(Long id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-
     public static MemberEntity of(Member member) {
-        return new MemberEntity(member.getName());
+        if (member.getId() == null) {
+            return new MemberEntity(null, member.getName());
+        }
+
+        return new MemberEntity(member.getId(), member.getName());
     }
 
     public Member to() {
