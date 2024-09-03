@@ -1,0 +1,11 @@
+project(':core-api') { // 컴파일 시 multi-module-database 로딩
+    bootJar { enabled = true }
+    jar { enabled = false }
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        implementation project(':core-domain')
+        runtimeOnly project(':storage:jpa-storage')
+    }
+}

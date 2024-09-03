@@ -38,33 +38,3 @@ subprojects {
         useJUnitPlatform()
     }
 }
-
-project(':core-api') { // 컴파일 시 multi-module-database 로딩
-    bootJar { enabled = true }
-    jar { enabled = false }
-    dependencies {
-        implementation 'org.springframework.boot:spring-boot-starter-web'
-        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-        testImplementation 'org.springframework.boot:spring-boot-starter-test'
-        implementation project(':core-domain')
-        runtimeOnly project(':storage:jpa-storage')
-    }
-}
-
-project(':core-domain') {
-    bootJar { enabled = false }
-    jar { enabled = true }
-    dependencies {
-        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    }
-}
-
-project(':storage:jpa-storage') {
-    bootJar { enabled = false }
-    jar { enabled = true }
-    dependencies {
-        compileOnly project(':core-domain')
-        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-        implementation 'com.h2database:h2'
-    }
-}
